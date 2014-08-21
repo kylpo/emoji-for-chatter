@@ -5,8 +5,12 @@
     "content_scripts": [
         {
             "matches": ["https://*.salesforce.com/*"],
-            "js": ["content.js"]
+            "js": ["./bower_components/emojify.js/emojify.js", "content.js"],
+            "run_at": "document_end"
         }
+    ],
+    "web_accessible_resources": [
+        "bower_components/emojify.js/images/emoji/*.png"
     ],
     "manifest_version": 2
 }
