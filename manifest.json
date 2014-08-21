@@ -5,8 +5,17 @@
     "content_scripts": [
         {
             "matches": ["https://*.salesforce.com/*"],
-            "js": ["./bower_components/emojify.js/emojify.js", "content.js"],
-            "css": ["style.css"],
+            "js": [
+                "./bower_components/jquery/dist/jquery.min.js",
+                "./bower_components/Caret.js/dist/jquery.caret.min.js",
+                "./bower_components/jquery.atwho/dist/js/jquery.atwho.min.js",
+                "./bower_components/emojify.js/emojify.js",
+                "content.js"
+            ],
+            "css": [
+                "./bower_components/jquery.atwho/dist/css/jquery.atwho.min.css",
+                "style.css"
+            ],
             "run_at": "document_end"
         }
     ],
