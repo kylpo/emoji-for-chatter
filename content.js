@@ -36,7 +36,7 @@ function handleCurrentNodes() {
 
 function handleNewlyInsertedNodes() {
     // listen for all newly inserted nodes in feed
-    document.getElementById('feedwrapper').addEventListener('DOMNodeInserted', function(event) {
+    $('#feedwrapper').addEventListener('DOMNodeInserted', function(event) {
         var $target = $(event.target);
 
         // if node is a feed item or feed item comment, atwho and emojify (order matters!)
