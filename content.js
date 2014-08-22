@@ -1,75 +1,44 @@
-console.log('HAI!');
-
-//debugger;
-emojify.setConfig({
-    img_dir: chrome.extension.getURL("bower_components/emojify.js/images/emoji")
-});
-
-
-// emojify all feed items on page
-var feedItems = document.getElementsByClassName('feeditemcontent');
-
-for (var i = 0; i < feedItems.length; i++) {
-    emojify.run(feedItems.item(i));
-}
-
-// emojify inserted nodes if they are a feed item or feed item comment
-document.getElementById('feedwrapper').addEventListener('DOMNodeInserted', function(event) {
-    if (event.target.classList.contains("feeditem") || event.target.classList.contains("feeditemcomment")) {
-        emojify.run(event.target);
-    }
-});
-
-
-
-//document.getElementsByClassName('feedcontainer')[0].addEventListener('DOMNodeInserted', function(event) {
-//    if (event.target.classList.contains("feeditem") || event.target.classList.contains("feeditemcomment")) {
-//        emojify.run(event.target);
-//    }
-//});
-
-//$('.feeditemcontent').on('load', function(event) {
-//    console.log(event);
-//});
+'use strict';
 
 var atwhoConfig = {
     at: ":",
-
 //    search_key: "nickname",
 //    tpl:"<li data-value=':${nickname}:'>${nickname} <img src=chrome.extension.getURL('bower_components/emojify.js/images/emoji/${nickname}.png')  height='20' width='20' /></li>",
 //    insert_tpl:"<img src='http://a248.e.akamai.net/assets.github.com/images/icons/emoji/${nickname}.png'  height='20' width='20' />",
     show_the_at: false,
-    'start_with_space': false,
+    start_with_space: false,
     data:['smile', 'coffee', 'shower']
 };
 
-//$('#publishereditablearea').atwho(atwhoConfig);
+function handlePage() {
+    emojify.setConfig({
+        img_dir: chrome.extension.getURL("bower_components/emojify.js/images/emoji")
+    });
 
-//$('.cxnewcommenttext').atwho(atwhoConfig);
+    // emojify all feed items on page
+    var feedItems = document.getElementsByClassName('feeditemcontent');
+    for (var i = 0; i < feedItems.length; i++) {
+        emojify.run(feedItems.item(i));
+    }
 
-//$('.feedcontainer').on('change', function(event) {
-//    console.log(event);
-//    var feedItems = document.getElementsByClassName('feeditemcontent');
-//
-//    for (var i = 0; i < feedItems.length; i++) {
-//        emojify.run(feedItems.item(i));
-//    }
-//});
-//debugger;
+    // main publisher textarea
+    $('#publishereditablearea').atwho(atwhoConfig);
+    // all comment textareas
+    $('.cxnewcommenttext').atwho(atwhoConfig);
+}
 
-//$('.feedcontainer').on('DOMNodeInserted', '.feeditem', function(event) {
-//    if (event.target.classList.contains("feeditem") || event.target.classList.contains("feeditemcomment")) {
-//        emojify.run(event.target);
-//    }
-//});
+function handleNewlyInsertedNodes() {
+    // listen for all newly inserted nodes in feed
+    document.getElementById('feedwrapper').addEventListener('DOMNodeInserted', function(event) {
+        var $target = $(event.target);
 
-//$('.feedcontainer')[0].addEventListener('DOMNodeInserted', function(event) { console.log(event); });
+        // if node is a feed item or feed item comment, atwho and emojify (order matters!)
+        if ($target.hasClass('feeditem') || $target.hasClass('feeditemcomment')) {
+            $target.find('.cxnewcommenttext').atwho(atwhoConfig);
+            emojify.run(event.target);
+        }
+    });
+}
 
-
-//$('#feedwrapper').addEventListener('DOMNodeInserted', function(event) { console.log(event); });
-//    var feedItems = document.getElementsByClassName('feeditemcontent');
-//
-//    for (var i = 0; i < feedItems.length; i++) {
-//        emojify.run(feedItems.item(i));
-//    }
-//});
+handlePage();
+handleNewlyInsertedNodes();
