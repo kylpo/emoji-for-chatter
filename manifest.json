@@ -20,7 +20,8 @@
         }
     ],
     "web_accessible_resources": [
-        "bower_components/emojify.js/images/emoji/*.png"
+        "bower_components/emojify.js/images/emoji/*.png",
+        "bower_components/jquery/dist/jquery.min.map"
     ],
     "manifest_version": 2
 }
