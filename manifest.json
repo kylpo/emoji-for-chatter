@@ -1,7 +1,7 @@
 {
     "name": "Emoji for Chatter",
-    "description": "See and input emoji in Chatter",
-    "version": "0.0.1",
+    "description": "See and input emoji in Chatter!",
+    "version": "0.1.1",
     "content_scripts": [
         {
             "matches": ["https://*.salesforce.com/*"],

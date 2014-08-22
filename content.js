@@ -17,7 +17,7 @@ var atwhoConfig = {
     data: emojiData
 };
 
-function handlePage() {
+function handleCurrentNodes() {
     emojify.setConfig({
         img_dir: chrome.extension.getURL("bower_components/emojify.js/images/emoji")
     });
@@ -47,5 +47,5 @@ function handleNewlyInsertedNodes() {
     });
 }
 
-handlePage();
+handleCurrentNodes();
 handleNewlyInsertedNodes();
