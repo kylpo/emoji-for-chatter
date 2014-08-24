@@ -36,15 +36,20 @@ function handleCurrentNodes() {
 
 function handleNewlyInsertedNodes() {
     // listen for all newly inserted nodes in feed
-    $('#feedwrapper').addEventListener('DOMNodeInserted', function(event) {
-        var $target = $(event.target);
+    var wrapper = document.getElementById('feedwrapper');
 
-        // if node is a feed item or feed item comment, atwho and emojify (order matters!)
-        if ($target.hasClass('feeditem') || $target.hasClass('feeditemcomment')) {
-            $target.find('.cxnewcommenttext').atwho(atwhoConfig);
-            emojify.run(event.target);
-        }
-    });
+    if (wrapper != null) {
+        wrapper.addEventListener('DOMNodeInserted', function(event) {
+            var $target = $(event.target);
+
+            // if node is a feed item or feed item comment, atwho and emojify (order matters!)
+            if ($target.hasClass('feeditem') || $target.hasClass('feeditemcomment')) {
+                $target.find('.cxnewcommenttext').atwho(atwhoConfig);
+                emojify.run(event.target);
+            }
+        });
+    }
+
 }
 
 handleCurrentNodes();
