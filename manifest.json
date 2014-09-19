@@ -1,7 +1,12 @@
 {
     "name": "Emoji for Chatter",
     "description": "See and input emoji in Chatter!",
-    "version": "0.1.4",
+    "version": "0.1.5",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
     "content_scripts": [
         {
             "matches": ["https://*.salesforce.com/*"],
