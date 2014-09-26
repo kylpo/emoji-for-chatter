@@ -11,22 +11,22 @@
         {
             "matches": ["https://*.salesforce.com/*"],
             "js": [
-                "./bower_components/jquery/dist/jquery.min.js",
-                "./bower_components/Caret.js/dist/jquery.caret.min.js",
-                "./bower_components/jquery.atwho/dist/js/jquery.atwho.min.js",
-                "./bower_components/emojify.js/emojify.js",
+                "./libs/jquery/dist/jquery.min.js",
+                "./libs/Caret.js/dist/jquery.caret.min.js",
+                "./libs/jquery.atwho/dist/js/jquery.atwho.min.js",
+                "./libs/emojify.js/emojify.js",
                 "content.js"
             ],
             "css": [
-                "./bower_components/jquery.atwho/dist/css/jquery.atwho.min.css",
+                "./libs/jquery.atwho/dist/css/jquery.atwho.min.css",
                 "style.css"
             ],
             "run_at": "document_end"
         }
     ],
     "web_accessible_resources": [
-        "bower_components/emojify.js/images/emoji/*.png",
-        "bower_components/jquery/dist/jquery.min.map"
+        "libs/emojify.js/images/emoji/*.png",
+        "libs/jquery/dist/jquery.min.map"
     ],
     "manifest_version": 2
 }

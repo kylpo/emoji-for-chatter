@@ -10,7 +10,7 @@ var atwhoConfig = {
         tpl_eval: function(tpl, map) {
             var name = map['name'];
             var dataValue = ':' + name + ':';
-            var displayValue = name + ' <img src=' + chrome.extension.getURL('bower_components/emojify.js/images/emoji/' + name + '.png') + ' height="20" width="20" />';
+            var displayValue = name + ' <img src=' + chrome.extension.getURL('libs/emojify.js/images/emoji/' + name + '.png') + ' height="20" width="20" />';
 
             return "<li data-value='" + dataValue + "'>" + displayValue + "</li>";
         }
@@ -19,12 +19,12 @@ var atwhoConfig = {
 };
 
 /**
- * After page loads, scrape all feed items and run emojify on them
- * Also set up atwho on the textareas
+ * After page loads, scrape all feed items and run emojify on them.
+ * Also set up atwho on the textareas.
  */
 (function handleCurrentNodes() {
     emojify.setConfig({
-        img_dir: chrome.extension.getURL("bower_components/emojify.js/images/emoji")
+        img_dir: chrome.extension.getURL("libs/emojify.js/images/emoji")
     });
 
     // emojify all feed items on page

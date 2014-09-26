@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-    bower_path: 'bower_components'
+    bower_path: 'libs'
 
     jasmine:
       src: 'src/*.js'

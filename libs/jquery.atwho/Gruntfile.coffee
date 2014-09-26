@@ -68,11 +68,11 @@ module.exports = (grunt) ->
           styles: 'dist/css/<%= pkg.name %>.css',
           specs: 'spec/build/javascripts/*.spec.js',
           vendor: [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/Caret.js/src/*.js'
+            'libs/jquery/dist/jquery.js',
+            'libs/Caret.js/src/*.js'
           ],
           helpers: [
-            'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
+            'libs/jasmine-jquery/lib/jasmine-jquery.js',
             'spec/build/spec_helper.js',
             'spec/helpers/*.js'
           ]
