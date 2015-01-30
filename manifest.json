@@ -1,32 +1,32 @@
 {
     "name": "Emoji for Chatter",
     "description": "See and input emoji in Chatter!",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-        "128": "icon128.png"
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
     },
     "content_scripts": [
         {
             "matches": ["https://*.salesforce.com/*"],
             "js": [
-                "./libs/jquery/dist/jquery.min.js",
-                "./libs/Caret.js/dist/jquery.caret.min.js",
-                "./libs/jquery.atwho/dist/js/jquery.atwho.min.js",
-                "./libs/emojify.js/emojify.js",
+                "libs/jquery.min.js",
+                "libs/jquery.caret.min.js",
+                "libs/jquery.atwho.min.js",
+                "libs/emojify.js",
                 "content.js"
             ],
             "css": [
-                "./libs/jquery.atwho/dist/css/jquery.atwho.min.css",
+                "libs/jquery.atwho.min.css",
                 "style.css"
             ],
             "run_at": "document_end"
         }
     ],
     "web_accessible_resources": [
-        "libs/emojify.js/images/emoji/*.png",
-        "libs/jquery/dist/jquery.min.map"
+        "images/emoji/*.png",
+        "libs/jquery.min.map"
     ],
     "manifest_version": 2
 }
