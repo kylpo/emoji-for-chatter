@@ -1,6 +1,6 @@
 Emoji for Chatter
 =======================
-![Emoji for Chatter](https://lh6.googleusercontent.com/uLVbq0803IZ16HpDGOEBdLkuepEHccIaoP1cz4_cOZa4emlvu8IPs0jA8VyKnSg76An1NrTvpg=s1280-h800-e365-rw "Emoji for Chatter")
+![Emoji for Chatter](https://lh3.googleusercontent.com/pQYLUMJw0wgN09TKobAoo-VEOwLaJj2tyOrhteC9wiuugKR9pfoXvBxCHSKOhVL1VoMR8IYuS7s=w2560-h1616 "Emoji for Chatter")
 ###See and input emoji in Chatter!
 
 [Emoji for Chatter](https://chrome.google.com/webstore/detail/emoji-for-chatter/dipcnkfbpgiehajjcohgldhjdnhpijhf?hl=en-US&utm_source=chrome-ntp-launcher) on the Chrome Web Store
